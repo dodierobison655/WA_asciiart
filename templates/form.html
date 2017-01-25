@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ASCII</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/ascii2.css">
+  </head>
+  <body>
+    <h1>ASCII Art</h1>
+    <form method="post" action="/testform">
+      <label>
+        <div>Title</div>
+        <input type="text" name="title">
+      </label>
+      <label>
+        <div>Art</div>
+        <textarea name="art"></textarea>
+      </label>
+      <br>
+      <input type="submit">
+    </form>
+    <label class = "error">
+        {{e}}
+    </label>
+    {% for Art in arts %}
+    <div class="art">
+        <div class="art-title">{{Art.title}}</div>
+        <pre class="art-body">{{Art.art}}</pre>  
+    </div>
+    {% endfor %}
+  </body>
+</html>
